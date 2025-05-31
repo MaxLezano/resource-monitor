@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+*.log
+
+# Entornos virtuales
+venv/
+env/
+.venv/
+.env/
+
+# PyInstaller
+build/
+dist/
+*.spec
+*.exe
+
+# Configuración IDE
+.idea/
+.vscode/
+*.iml
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Otros
+release/
+libs/OpenHardwareMonitorLib.sys
+libs/OpenHardwareMonitorLib.dll
+libs/nircmd.exe
