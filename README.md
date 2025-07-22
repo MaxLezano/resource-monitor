@@ -35,7 +35,7 @@ Python application to monitor hardware (CPU, GPU, RAM) and control system audio 
   ```
 - To build a portable executable:
   ```sh
-  build_exe.bat
+  ./build_exe.bat
   ```
   The executable will be located in the `release/` folder.
 

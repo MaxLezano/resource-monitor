@@ -1,4 +1,16 @@
 @echo off
+set /p PORT_NUM=Enter the port number (e.g., 6 for COM6):
+set PORT=COM%PORT_NUM%
+
+set BAUD_RATE=9600
+set /p CHANGE_BAUD=The default value for BAUD_RATE is 9600. Do you want to change it? (y/n):
+if /I "%CHANGE_BAUD%"=="y" (
+    set /p BAUD_RATE=Enter the new BAUD_RATE:
+)
+
+echo Selected port: %PORT%
+echo Baud rate: %BAUD_RATE%
+
 echo ================================
 echo [*] Activating virtual environment...
 echo ================================
@@ -30,7 +42,7 @@ mkdir release\libs
 
 REM Check if the dist folder exists and contains the executable
 if not exist dist\main.exe (
-    echo [X] ERROR: Not found dist\main.exe. The compilation failed.
+    echo [X] ERROR: dist\main.exe not found. The compilation failed.
     pause
     exit /b 1
 )
