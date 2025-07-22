@@ -28,6 +28,13 @@ if not exist release mkdir release
 if exist release\libs rmdir /s /q release\libs
 mkdir release\libs
 
+REM Check if the dist folder exists and contains the executable
+if not exist dist\main.exe (
+    echo [X] ERROR: Not found dist\main.exe. The compilation failed.
+    pause
+    exit /b 1
+)
+
 REM Copy executable
 copy dist\main.exe release\main.exe
 
