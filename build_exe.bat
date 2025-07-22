@@ -11,10 +11,14 @@ if /I "%CHANGE_BAUD%"=="y" (
 echo Selected port: %PORT%
 echo Baud rate: %BAUD_RATE%
 
+REM Create config.txt before compiling to avoid prompts
+echo PORT=%PORT%> monitor\config.txt
+echo BAUD_RATE=%BAUD_RATE%>> monitor\config.txt
+
 echo ================================
 echo [*] Activating virtual environment...
 echo ================================
-REM If you use venv, activate it here. Otherwise, skip this line.
+REM If you use venv, activate it here. If you use pipenv, open the terminal with pipenv shell before running this bat.
 REM call venv\Scripts\activate
 
 echo ================================

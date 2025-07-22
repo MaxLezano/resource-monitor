@@ -31,7 +31,7 @@ Python application to monitor hardware (CPU, GPU, RAM) and control system audio 
 
 - To run in development mode:
   ```sh
-  python core/main.py
+  python core/debug.py
   ```
 - To build a portable executable:
   ```sh
