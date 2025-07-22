@@ -9,6 +9,7 @@ pythonnet = "*"
 setuptools = "*"
 pyinstaller = "*"
 keyboard = "*"
+python-dotenv = "*"
 
 [dev-packages]
 

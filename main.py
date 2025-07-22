@@ -27,8 +27,6 @@ def send_initial_info():
     send_command(f'gpuName.txt="{get_gpu_name()}"')
     send_command(f'ramFrequency.txt="{get_ram_frequency()} MHz"')
 
-print("Hardware monitoring is running successfully.")
-
 send_initial_info()
 threading.Thread(target=update_monitor_data, daemon=True).start()
 threading.Thread(target=listen_for_events, args=(handle_event,), daemon=True).start()

@@ -1,20 +1,4 @@
 @echo off
-set /p PORT_NUM=Enter the port number (e.g., 6 for COM6):
-set PORT=COM%PORT_NUM%
-
-set BAUD_RATE=9600
-set /p CHANGE_BAUD=The default value for BAUD_RATE is 9600. Do you want to change it? (y/n):
-if /I "%CHANGE_BAUD%"=="y" (
-    set /p BAUD_RATE=Enter the new BAUD_RATE:
-)
-
-echo Selected port: %PORT%
-echo Baud rate: %BAUD_RATE%
-
-REM Create config.txt before compiling to avoid prompts
-echo PORT=%PORT%> monitor\config.txt
-echo BAUD_RATE=%BAUD_RATE%>> monitor\config.txt
-
 echo ================================
 echo [*] Activating virtual environment...
 echo ================================
@@ -32,7 +16,7 @@ pyinstaller --noconfirm --clean --onefile ^
   --add-data "audio;audio" ^
   --add-data "ui;ui" ^
   --add-data "libs\default_volume_levels.json;libs" ^
-  core\main.py --name main
+  main.py --name main
 
 echo.
 echo ================================
